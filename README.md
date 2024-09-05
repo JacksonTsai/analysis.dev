@@ -19,6 +19,20 @@ https://github.com/user-attachments/assets/1296df9b-1b7f-40eb-9038-0e82e9bfa466
 
 <br>
 
+Branch
+
+- feat-react-hook-form :point_right:
+  [Live Demo](https://app-with-react-hook-form.netlify.app/today-weather)
+
+  This branch implements form handling using React Hook Form and Zod.
+
+- feat-react-hook :point_right:
+  [Live Demo](https://app-with-react-hook.netlify.app/today-weather)
+
+  This branch implements form handling using React Hooks.
+
+<br>
+
 <details>
 <summary>Table of Contents</summary>
 
