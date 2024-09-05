@@ -65,44 +65,44 @@
 
 ##### Components
 
-| File                                                                                                                   | Summary                                                                                     |
-| ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [InputField.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/InputField.tsx)         | Input field component that integrates with React Hook Form.                                 |
-| [Card.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/Card.tsx)                     | Card component that displays its children inside a styled container                         |
-| [TopBar.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/TopBar.tsx)                 | Top navigation bar component that displays an analysis icon, app name, and user information |
-| [AppLayout.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/AppLayout.tsx)           | Layout component that provides a top bar, sidebar, and main content area                    |
-| [PopulationCard.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/PopulationCard.tsx) | PopulationCard component that displays a line chart of male and female birth data           |
-| [SideBar.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/SideBar.tsx)               | Sidebar component that provides navigation links.                                           |
-| [Button.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/Button.tsx)                 | Button component with customizable label, callback, disabled state, and button type         |
-| [WeatherCard.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/WeatherCard.tsx)       | WeatherCard component that displays weather information.                                    |
+| File                                                                                                                          | Summary                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [InputField.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/InputField.tsx)         | Input field component that integrates with React Hook Form.                                 |
+| [Card.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/Card.tsx)                     | Card component that displays its children inside a styled container                         |
+| [TopBar.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/TopBar.tsx)                 | Top navigation bar component that displays an analysis icon, app name, and user information |
+| [AppLayout.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/AppLayout.tsx)           | Layout component that provides a top bar, sidebar, and main content area                    |
+| [PopulationCard.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/PopulationCard.tsx) | PopulationCard component that displays a line chart of male and female birth data           |
+| [SideBar.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/SideBar.tsx)               | Sidebar component that provides navigation links.                                           |
+| [Button.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/Button.tsx)                 | Button component with customizable label, callback, disabled state, and button type         |
+| [WeatherCard.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/components/WeatherCard.tsx)       | WeatherCard component that displays weather information.                                    |
 
 ##### Pages
 
-| File                                                                                                          | Summary                                                                               |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [TodayWeather.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/pages/TodayWeather.tsx) | TodayWeather page allows users to search for the current weather by city and country. |
-| [Population.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/pages/Population.tsx)     | Population page displays population chart.                                            |
+| File                                                                                                                 | Summary                                                                               |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [TodayWeather.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/pages/TodayWeather.tsx) | TodayWeather page allows users to search for the current weather by city and country. |
+| [Population.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/pages/Population.tsx)     | Population page displays population chart.                                            |
 
 ##### API
 
-| File                                                                                                           | Summary             |
-| -------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [weatherApi.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/apis/weather/weatherApi.ts) | OpenWeatherMap API. |
+| File                                                                                                                  | Summary             |
+| --------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [weatherApi.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/apis/weather/weatherApi.ts) | OpenWeatherMap API. |
 
 ##### Utils
 
-| File                                                                                                                        | Summary                                                                                  |
-| --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [weatherDataTransform.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/utils/weatherDataTransform.ts) | Transforms weather API response data into a format suitable for the WeatherCardInfo type |
+| File                                                                                                                               | Summary                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [weatherDataTransform.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/utils/weatherDataTransform.ts) | Transforms weather API response data into a format suitable for the WeatherCardInfo type |
 
 ##### Types
 
-| File                                                                                                              | Summary           |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------- |
-| [weatherCardType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/weatherCardType.ts) | weather card type |
-| [wetherApiType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/wetherApiType.ts)     | wether api type   |
-| [buttonType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/buttonType.ts)           | button type       |
-| [textFieldType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/textFieldType.ts)     | textField type    |
+| File                                                                                                                     | Summary           |
+| ------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| [weatherCardType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/types/weatherCardType.ts) | weather card type |
+| [wetherApiType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/types/wetherApiType.ts)     | wether api type   |
+| [buttonType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/types/buttonType.ts)           | button type       |
+| [textFieldType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-react-hook-form/src/types/textFieldType.ts)     | textField type    |
 
 ---
 

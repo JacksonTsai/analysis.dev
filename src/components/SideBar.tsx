@@ -17,13 +17,13 @@ const Sidebar: React.FC = () => {
     <div className="fixed h-screen w-60 overflow-hidden bg-white shadow-md">
       <ul className="flex h-full flex-col pt-20">
         <li
-          className={`${linkStyle} ${location.pathname === '/today-weather' && 'border-r-4 border-solid border-r-navy-blue bg-slate-200'}`}
+          className={`${linkStyle} ${location.pathname === '/today-weather' && 'border-r-navy-blue border-r-4 border-solid bg-slate-200'}`}
         >
           <img src={sun} />
           <Link to="/today-weather">Today's Weather</Link>
         </li>
         <li
-          className={`${linkStyle} ${location.pathname === '/population' && 'border-r-4 border-solid border-r-navy-blue bg-slate-200'}`}
+          className={`${linkStyle} ${location.pathname === '/population' && 'border-r-navy-blue border-r-4 border-solid bg-slate-200'}`}
         >
           <img src={chart} />
           <Link to="/population">Population</Link>

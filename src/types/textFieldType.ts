@@ -1,7 +1,11 @@
-import { Control } from 'react-hook-form';
-
 export type TextFieldProps = {
-  name: string;
-  control: Control<any>;
+  value: string | number;
   label: string;
+  name: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  errors?: TextFieldError | null;
+};
+
+export type TextFieldError = {
+  [key: string]: string;
 };

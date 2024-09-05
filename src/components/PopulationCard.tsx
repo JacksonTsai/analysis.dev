@@ -1,4 +1,4 @@
-import Card from '../components/Card';
+import Card from './Card';
 import { Line } from 'react-chartjs-2';
 import {
   Chart,
@@ -64,7 +64,7 @@ const options: ChartOptions<'line'> = {
 const PopulationCard: React.FC = () => {
   return (
     <Card>
-      <div className="flex h-[338px] w-[476px] flex-col justify-between text-navy-blue">
+      <div className="text-navy-blue flex h-[338px] w-[476px] flex-col justify-between">
         <div className="mb-7 flex justify-between">
           <span className="flex gap-1 font-bold">
             <img src={location_mark} alt="Location" />

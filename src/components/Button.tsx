@@ -1,4 +1,3 @@
-import React from 'react';
 import { ButtonProps } from '../types/buttonType';
 
 /**
@@ -20,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({ label, cb, disabled = false, type = 'bu
   return (
     <button
       type={type}
-      className={`w-[138px] rounded border bg-navy-blue px-4 py-2 text-base text-white ${disabled ? 'cursor-not-allowed text-slate-300 opacity-50' : 'hover:bg-blue-900 active:opacity-90'}`}
+      className={`bg-navy-blue w-[138px] rounded border px-4 py-2 text-base text-white ${disabled ? 'cursor-not-allowed text-slate-300 opacity-50' : 'hover:bg-blue-900 active:opacity-90'}`}
       onClick={cb}
       disabled={disabled}
     >

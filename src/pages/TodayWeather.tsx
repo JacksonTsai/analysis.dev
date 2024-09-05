@@ -1,75 +1,78 @@
 import InputField from '../components/InputField';
 import Button from '../components/Button';
 import WeatherCard from '../components/WeatherCard';
+import { FormEvent, useEffect, useState } from 'react';
 import { fetchWeather } from '../apis/weather/weatherApi';
-import { useForm } from 'react-hook-form';
-import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react';
-import { weatherDataTransform } from '../utils/weatherDataTransform';
 import { WeatherProps, WeatherPropsStatus } from '../types/weatherCardType';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { weatherDataTransform } from '../utils/weatherDataTransform';
 
-const formSchema = z.object({
-  city: z.string().min(1, 'This field is required.').max(64, 'Exceeds max length.'),
-  country: z.string().min(1, 'This field is required.').max(64, 'Exceeds max length.')
-});
+type FormSchema = {
+  city: string;
+  country: string;
+};
 
-type formType = z.infer<typeof formSchema>;
+type ErrorSchema = FormSchema & {
+  api: string;
+};
 
 const TodayWeather: React.FC = () => {
+  const [formData, setFormData] = useState<FormSchema>({ city: '', country: '' });
+  const [errors, setErrors] = useState<ErrorSchema>({ city: '', country: '', api: '' });
+  const [loading, setLoading] = useState<boolean>(false);
+  const [formInvalid, setFormInvalid] = useState<boolean>(true);
   const [weather, setWeather] = useState<WeatherProps>({ status: WeatherPropsStatus.Init });
-  const {
-    handleSubmit,
-    control,
-    getValues,
-    setError,
-    formState: { errors, isValid, isSubmitting }
-  } = useForm<formType>({
-    defaultValues: { city: '', country: '' },
-    mode: 'onChange',
-    resolver: zodResolver(formSchema)
-  });
 
-  const { data, refetch, isError, isFetching, isLoading, isSuccess, error } = useQuery({
-    queryKey: [getValues().city, getValues().country],
-    queryFn: async () => await fetchWeather({ city: getValues().city, country: getValues().country }),
-    enabled: false,
-    retry: 0,
-    staleTime: 0,
-    gcTime: 0
-  });
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+    setErrors({
+      ...errors,
+      [name]: value ? '' : 'This field is required.'
+    });
+  };
 
   useEffect(() => {
-    if (isSuccess) {
-      const cardInfo = weatherDataTransform(data);
-      setWeather({ cardInfo, status: WeatherPropsStatus.Success });
-    } else if (isError || error) {
-      setError('root', {
-        message: 'Not found the city or country'
-      });
-      setWeather({ status: WeatherPropsStatus.Error });
-    } else if (isFetching || isLoading) {
-      setWeather({ status: WeatherPropsStatus.Loading });
-    }
-  }, [isSuccess, isError, isFetching, isLoading, error, isSubmitting]);
+    const isFormValid = formData.city && formData.country;
+    setFormInvalid(!isFormValid);
+  }, [formData]);
 
-  const isFormDisabled = () => {
-    if (!isValid || isLoading || isFetching) {
-      return true;
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setErrors({ ...errors, api: '' });
+    setLoading(true);
+    setWeather({ status: WeatherPropsStatus.Loading });
+    try {
+      const resp = await fetchWeather({ city: formData.city, country: formData.country });
+      const cardInfo = weatherDataTransform(resp);
+      setWeather({ cardInfo, status: WeatherPropsStatus.Success });
+    } catch (error) {
+      setWeather({ status: WeatherPropsStatus.Error });
+      setErrors({ ...errors, api: 'Not found the city or country.' });
     }
-    return false;
+    setLoading(false);
   };
 
   return (
     <>
       <h1 className="pb-10 text-3xl">Today's Weather</h1>
-      <form onSubmit={handleSubmit(() => refetch())}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <div className="relative mb-14 flex gap-3.5">
-          <InputField control={control} name="city" label="City"></InputField>
-          <InputField control={control} name="country" label="Country"></InputField>
-          <Button type="submit" label="Search" disabled={isFormDisabled()}></Button>
-          <p className="absolute -bottom-10 left-10 text-warm-pink">{errors.root?.message}</p>
+          <InputField
+            onChange={handleInputChange}
+            errors={errors}
+            value={formData.city}
+            name="city"
+            label="City"
+          ></InputField>
+          <InputField
+            onChange={handleInputChange}
+            errors={errors}
+            value={formData.country}
+            name="country"
+            label="Country"
+          ></InputField>
+          <Button type="submit" label="Search" disabled={formInvalid || loading}></Button>
+          <p className="text-warm-pink absolute -bottom-10 left-10">{errors?.api}</p>
         </div>
       </form>
 

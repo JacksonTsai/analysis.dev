@@ -11,18 +11,6 @@ import temperature from '../assets/icons/temperature.svg';
 import loading from '../assets/icons/loading.svg';
 import Card from './Card';
 
-/**
- * WeatherCard component that displays weather information.
- * The card adjusts based on the status of the weather data (Success, Init, Loading, or Error).
- *
- * @param {WeatherProps} props - The properties for the WeatherCard component.
- * @param {WeatherProps['cardInfo']} props.cardInfo - The weather data to display when the status is Success.
- * @param {WeatherPropsStatus} [props.status=WeatherPropsStatus.Init] - The current status of the weather data (Success, Init, Loading, or Error).
- *
- * @returns {JSX.Element} The rendered weather card with conditional content based on the status.
- *
- */
-
 const WeatherCard: React.FC<WeatherProps> = ({ cardInfo, status = WeatherPropsStatus.Init }) => {
   const numRound = (num: number) => {
     return Math.round(num);

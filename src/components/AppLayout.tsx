@@ -1,5 +1,5 @@
-import TopBar from '../components/TopBar';
-import Sidebar from '../components/SideBar';
+import TopBar from './TopBar';
+import Sidebar from './SideBar';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import loading from '../assets/icons/loading.svg';
