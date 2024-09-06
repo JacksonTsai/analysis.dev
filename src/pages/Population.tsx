@@ -1,9 +1,10 @@
-import React from 'react';
+import PopulationCard from '../components/PopulationCard';
 
 function Population() {
   return (
     <>
       <h1 className="pb-10 text-3xl">Population</h1>
+      <PopulationCard></PopulationCard>
     </>
   );
 }
