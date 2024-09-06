@@ -1,6 +1,22 @@
+import React from 'react';
 import { ButtonProps } from '../types/buttonType';
 
-function Button({ label, cb, disabled = false, type = 'button' }: ButtonProps) {
+/**
+ * Button component with label, callback, disabled state, and button type.
+ *
+ * @param {ButtonProps} props - The properties for the button component.
+ * @param {string} props.label - The text displayed inside the button.
+ * @param {() => void} props.cb - The callback function triggered on button click.
+ * @param {boolean} [props.disabled=false] - Optional. Controls whether the button is disabled.
+ * @param {'button' | 'submit' | 'reset'} [props.type='button'] - Optional. Specifies the button type (default is 'button').
+ *
+ * @returns {JSX.Element} The rendered button component.
+ *
+ * @example
+ * <Button label="Submit" cb={handleSubmit} disabled={false} type="submit" />
+ */
+
+const Button: React.FC<ButtonProps> = ({ label, cb, disabled = false, type = 'button' }: ButtonProps) => {
   return (
     <button
       type={type}
@@ -11,6 +27,6 @@ function Button({ label, cb, disabled = false, type = 'button' }: ButtonProps) {
       {label}
     </button>
   );
-}
+};
 
 export default Button;

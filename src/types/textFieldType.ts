@@ -1,4 +1,4 @@
-import { Control, Path } from 'react-hook-form';
+import { Control } from 'react-hook-form';
 
 export type TextFieldProps = {
   name: string;

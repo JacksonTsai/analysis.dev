@@ -54,6 +54,13 @@ const options: ChartOptions<'line'> = {
   }
 };
 
+/**
+ * PopulationCard component that displays a line chart of male and female birth data.
+ *
+ * @returns {JSX.Element} The rendered population card with a line chart.
+ *
+ */
+
 const PopulationCard: React.FC = () => {
   return (
     <Card>

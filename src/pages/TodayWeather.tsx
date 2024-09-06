@@ -4,7 +4,7 @@ import WeatherCard from '../components/WeatherCard';
 import { fetchWeather } from '../apis/weather/weatherApi';
 import { useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { weatherDataTransform } from '../utils/weatherDataTransform';
 import { WeatherProps, WeatherPropsStatus } from '../types/weatherCardType';
 import { z } from 'zod';
@@ -17,7 +17,7 @@ const formSchema = z.object({
 
 type formType = z.infer<typeof formSchema>;
 
-const TodayWeather = () => {
+const TodayWeather: React.FC = () => {
   const [weather, setWeather] = useState<WeatherProps>({ status: WeatherPropsStatus.Init });
   const {
     handleSubmit,
@@ -68,7 +68,7 @@ const TodayWeather = () => {
           <InputField control={control} name="city" label="City"></InputField>
           <InputField control={control} name="country" label="Country"></InputField>
           <Button type="submit" label="Search" disabled={isFormDisabled()}></Button>
-          <p className="text-warm-pink absolute -bottom-10 left-10">{errors.root?.message}</p>
+          <p className="absolute -bottom-10 left-10 text-warm-pink">{errors.root?.message}</p>
         </div>
       </form>
 

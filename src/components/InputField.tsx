@@ -1,7 +1,18 @@
 import { Controller } from 'react-hook-form';
 import { TextFieldProps } from '../types/textFieldType';
 
-function InputField({ label, name, control }: TextFieldProps) {
+/**
+ * Input field component that integrates with React Hook Form.
+ *
+ * @param {TextFieldProps} props - The props for the input field component.
+ * @param {string} props.label - The label text to display for the input field.
+ * @param {string} props.name - The name of the field, used to register it with React Hook Form.
+ * @param {Control} props.control - The control object from React Hook Form to manage the form state.
+ * @returns {JSX.Element} The rendered input field component with label and error message handling.
+ *
+ */
+
+const InputField: React.FC<TextFieldProps> = ({ label, name, control }: TextFieldProps) => {
   return (
     <div className="flex items-center gap-3.5">
       <label className="block text-base capitalize text-black">{label}</label>
@@ -18,13 +29,13 @@ function InputField({ label, name, control }: TextFieldProps) {
                 value={field.value}
                 onChange={field.onChange}
               ></input>
-              <p className="text-warm-pink absolute text-xs">{fieldState.error && fieldState.error.message}</p>
+              <p className="absolute text-xs text-warm-pink">{fieldState.error && fieldState.error.message}</p>
             </div>
           );
         }}
       ></Controller>
     </div>
   );
-}
+};
 
 export default InputField;

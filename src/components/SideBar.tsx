@@ -3,8 +3,14 @@ import sun from '../assets/icons/sun.svg';
 import chart from '../assets/icons/chart.svg';
 
 const linkStyle = 'flex h-14 gap-3 pl-8 text-base leading-[56px] text-gray-700 hover:bg-blue-100';
-
-const Sidebar = () => {
+/**
+ * Sidebar component that provides navigation links.
+ * It highlights the active route based on the current URL pathname.
+ *
+ * @returns {JSX.Element} The rendered sidebar with navigation links.
+ *
+ */
+const Sidebar: React.FC = () => {
   const location = useLocation();
 
   return (

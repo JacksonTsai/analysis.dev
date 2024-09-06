@@ -2,7 +2,16 @@ import analytics from '../assets/icons/analytics.svg';
 import user from '../assets/icons/user.svg';
 import down from '../assets/icons/down.svg';
 
-const TopBar = () => {
+/**
+ * Top navigation bar component that displays an analysis icon, app name, and user information.
+ *
+ * @returns {JSX.Element} The rendered top bar navigation component.
+ *
+ * @example
+ * <TopBar />
+ */
+
+const TopBar: React.FC = () => {
   return (
     <nav aria-label="top bar" className="fixed z-10 flex w-full items-center justify-between bg-white px-8 py-4 shadow">
       <div className="flex items-center justify-start gap-3">
