@@ -11,6 +11,12 @@ export const apiClient = axios.create({
 
 export const fetchWeather = async ({ city, country }: IWeatherReq): Promise<IWeatherResp> => {
   const url = `${WEATHER_PATH}?q=${city},${country}&units=metric&appid=${API_KEY}`;
-  const response = await apiClient.get(url);
-  return response.data;
+  return await apiClient
+    .get(url)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
 };

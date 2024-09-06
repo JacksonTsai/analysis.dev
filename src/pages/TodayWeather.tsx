@@ -24,18 +24,19 @@ const TodayWeather: React.FC = () => {
     control,
     getValues,
     setError,
-    formState: { errors, isValid }
+    formState: { errors, isValid, isSubmitting }
   } = useForm<formType>({
     defaultValues: { city: '', country: '' },
     mode: 'onChange',
     resolver: zodResolver(formSchema)
   });
 
-  const { data, refetch, isError, isFetching, isLoading, isSuccess } = useQuery({
+  const { data, refetch, isError, isFetching, isLoading, isSuccess, error } = useQuery({
     queryKey: [getValues().city, getValues().country],
-    queryFn: () => fetchWeather({ city: getValues().city, country: getValues().country }),
+    queryFn: async () => await fetchWeather({ city: getValues().city, country: getValues().country }),
     enabled: false,
     retry: 0,
+    staleTime: 0,
     gcTime: 0
   });
 
@@ -43,7 +44,7 @@ const TodayWeather: React.FC = () => {
     if (isSuccess) {
       const cardInfo = weatherDataTransform(data);
       setWeather({ cardInfo, status: WeatherPropsStatus.Success });
-    } else if (isError) {
+    } else if (isError || error) {
       setError('root', {
         message: 'Not found the city or country'
       });
@@ -51,7 +52,7 @@ const TodayWeather: React.FC = () => {
     } else if (isFetching || isLoading) {
       setWeather({ status: WeatherPropsStatus.Loading });
     }
-  }, [isSuccess, isError, isFetching, isLoading]);
+  }, [isSuccess, isError, isFetching, isLoading, error, isSubmitting]);
 
   const isFormDisabled = () => {
     if (!isValid || isLoading || isFetching) {

@@ -11,7 +11,6 @@ const router = createBrowserRouter([
         index: true,
         element: <Navigate to="/today-weather" replace />
       },
-
       {
         path: '/today-weather',
         Component: React.lazy(() => import('../pages/TodayWeather'))
