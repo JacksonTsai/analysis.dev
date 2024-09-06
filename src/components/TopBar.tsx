@@ -1,4 +1,4 @@
-import ic_analytics from '../assets/icons/ic_analytics.svg';
+import analytics from '../assets/icons/analytics.svg';
 import user from '../assets/icons/user.svg';
 import down from '../assets/icons/down.svg';
 
@@ -6,7 +6,7 @@ const TopBar = () => {
   return (
     <nav aria-label="top bar" className="fixed z-10 flex w-full items-center justify-between bg-white px-8 py-4 shadow">
       <div className="flex items-center justify-start gap-3">
-        <img src={ic_analytics} alt="analysis icon" />
+        <img src={analytics} alt="analysis icon" />
         <div className="flex items-baseline justify-start gap-1">
           <span className="text-2xl">Analysis</span>
           <span className="text-base text-slate-400">.dev</span>
