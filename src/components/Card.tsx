@@ -5,11 +5,7 @@ type Props = {
 };
 
 function Card({ children }: Props) {
-  return (
-    <div className="max-w-sm overflow-hidden rounded-lg border border-slate-300 bg-white">
-      <div className="p-8">{children}</div>
-    </div>
-  );
+  return <div className="inline-block rounded-lg border border-slate-300 bg-white p-8">{children}</div>;
 }
 
 export default Card;
