@@ -1,4 +1,4 @@
-# `ANALYSIS.DEV`
+# ANALYSIS.DEV
 
 <p align="left">
 </p>
@@ -15,21 +15,16 @@
 
 <br>
 
-<details><summary>Table of Contents</summary>
+<details>
+<summary>Table of Contents</summary>
 
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ Repository Structure](#-repository-structure)
-- [ Modules](#-modules)
-- [ Getting Started](#-getting-started)
-  - [ Prerequisites](#-prerequisites)
-  - [ Installation](#-installation)
-  - [ Usage](#-usage)
-  - [ Tests](#-tests)
-- [ Project Roadmap](#-project-roadmap)
-- [ Contributing](#-contributing)
-- [ License](#-license)
-- [ Acknowledgments](#-acknowledgments)
+- [Repository Structure](#repository-structure)
+- [Modules ](#modules)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#Installation)
+  - [Start](#Start)
+  - [Tests](#tests)
 
 </details>
 <hr>
@@ -37,7 +32,7 @@
 ## Repository Structure
 
 ```sh
-└── analysis.dev.git/
+└── analysis.dev/
     ├── README.md
     ├── eslint.config.js
     ├── favicon.svg
@@ -70,44 +65,44 @@
 
 ##### Components
 
-| File                                                                                                              | Summary                                                                                     |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [InputField.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/InputField.tsx)         | Input field component that integrates with React Hook Form.                                 |
-| [Card.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/Card.tsx)                     | Card component that displays its children inside a styled container                         |
-| [TopBar.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/TopBar.tsx)                 | Top navigation bar component that displays an analysis icon, app name, and user information |
-| [AppLayout.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/AppLayout.tsx)           | Layout component that provides a top bar, sidebar, and main content area                    |
-| [PopulationCard.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/PopulationCard.tsx) | PopulationCard component that displays a line chart of male and female birth data           |
-| [SideBar.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/SideBar.tsx)               | Sidebar component that provides navigation links.                                           |
-| [Button.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/Button.tsx)                 | Button component with customizable label, callback, disabled state, and button type         |
-| [WeatherCard.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/components/WeatherCard.tsx)       | WeatherCard component that displays weather information.                                    |
+| File                                                                                                                   | Summary                                                                                     |
+| ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [InputField.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/InputField.tsx)         | Input field component that integrates with React Hook Form.                                 |
+| [Card.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/Card.tsx)                     | Card component that displays its children inside a styled container                         |
+| [TopBar.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/TopBar.tsx)                 | Top navigation bar component that displays an analysis icon, app name, and user information |
+| [AppLayout.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/AppLayout.tsx)           | Layout component that provides a top bar, sidebar, and main content area                    |
+| [PopulationCard.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/PopulationCard.tsx) | PopulationCard component that displays a line chart of male and female birth data           |
+| [SideBar.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/SideBar.tsx)               | Sidebar component that provides navigation links.                                           |
+| [Button.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/Button.tsx)                 | Button component with customizable label, callback, disabled state, and button type         |
+| [WeatherCard.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/components/WeatherCard.tsx)       | WeatherCard component that displays weather information.                                    |
 
 ##### Pages
 
-| File                                                                                                     | Summary                                                                               |
-| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [TodayWeather.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/pages/TodayWeather.tsx) | TodayWeather page allows users to search for the current weather by city and country. |
-| [Population.tsx](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/pages/Population.tsx)     | Population page displays population chart.                                            |
+| File                                                                                                          | Summary                                                                               |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [TodayWeather.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/pages/TodayWeather.tsx) | TodayWeather page allows users to search for the current weather by city and country. |
+| [Population.tsx](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/pages/Population.tsx)     | Population page displays population chart.                                            |
 
 ##### API
 
-| File                                                                                                      | Summary             |
-| --------------------------------------------------------------------------------------------------------- | ------------------- |
-| [weatherApi.ts](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/apis/weather/weatherApi.ts) | OpenWeatherMap API. |
+| File                                                                                                           | Summary             |
+| -------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [weatherApi.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/apis/weather/weatherApi.ts) | OpenWeatherMap API. |
 
 ##### Utils
 
-| File                                                                                                                   | Summary                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [weatherDataTransform.ts](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/utils/weatherDataTransform.ts) | Transforms weather API response data into a format suitable for the WeatherCardInfo type |
+| File                                                                                                                        | Summary                                                                                  |
+| --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [weatherDataTransform.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/utils/weatherDataTransform.ts) | Transforms weather API response data into a format suitable for the WeatherCardInfo type |
 
 ##### Types
 
-| File                                                                                                         | Summary           |
-| ------------------------------------------------------------------------------------------------------------ | ----------------- |
-| [weatherCardType.ts](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/types/weatherCardType.ts) | weather card type |
-| [wetherApiType.ts](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/types/wetherApiType.ts)     | wether api type   |
-| [buttonType.ts](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/types/buttonType.ts)           | button type       |
-| [textFieldType.ts](https://github.com/JacksonTsai/analysis.dev.git/blob/main/src/types/textFieldType.ts)     | textField type    |
+| File                                                                                                              | Summary           |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------- |
+| [weatherCardType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/weatherCardType.ts) | weather card type |
+| [wetherApiType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/wetherApiType.ts)     | wether api type   |
+| [buttonType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/buttonType.ts)           | button type       |
+| [textFieldType.ts](https://github.com/JacksonTsai/analysis.dev/blob/feat-analysis/src/types/textFieldType.ts)     | textField type    |
 
 ---
 
@@ -119,20 +114,20 @@
 
 - npm
 
-### Installation / Start
+### Installation
 
 Build the project from source:
 
-1. Clone the analysis.dev.git repository:
+1. Clone the analysis.dev repository:
 
 ```sh
- git clone https://github.com/JacksonTsai/analysis.dev.git
+ git clone https://github.com/JacksonTsai/analysis.dev
 ```
 
 2. Navigate to the project directory:
 
 ```sh
- cd analysis.dev.git
+ cd analysis.dev
 ```
 
 3. Install the required dependencies:
@@ -141,7 +136,7 @@ Build the project from source:
  npm install
 ```
 
-4. Install the required dependencies:
+### Start
 
 ```sh
  npm run dev
