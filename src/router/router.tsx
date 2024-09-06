@@ -1,7 +1,6 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import AppLayout from '../components/AppLayout';
-import TodayWeather from '../pages/TodayWeather';
-import Population from '../pages/Population';
+import React from 'react';
 
 const router = createBrowserRouter([
   {
@@ -9,18 +8,23 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
+        index: true,
+        element: <Navigate to="/today-weather" replace />
+      },
+
+      {
         path: '/today-weather',
-        element: <TodayWeather />
+        Component: React.lazy(() => import('../pages/TodayWeather'))
       },
       {
         path: '/Population',
-        element: <Population />
+        Component: React.lazy(() => import('../pages/Population'))
+      },
+      {
+        path: '*',
+        element: <Navigate to="/today-weather" replace />
       }
     ]
   }
-  //   {
-  //     path: "/login",
-  //     element: <Login />,
-  //   },
 ]);
 export default router;
